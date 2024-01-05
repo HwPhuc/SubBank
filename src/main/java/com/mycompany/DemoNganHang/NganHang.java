@@ -42,13 +42,29 @@ class NganHang {
         return ketQuaTimKiem;
     }
 
+//    public void sapXepKhachHangTheoSoDu() {
+//        Collections.sort(getDanhSachKhachHang(), (kh1, kh2) -> {
+//            double tongSoDu1 = kh1.getDanhSachTaiKhoan().stream().mapToDouble(TaiKhoan::getSoDu).sum();
+//            double tongSoDu2 = kh2.getDanhSachTaiKhoan().stream().mapToDouble(TaiKhoan::getSoDu).sum();
+//            return Double.compare(tongSoDu2, tongSoDu1);
+//        });
+//    }
+    
     public void sapXepKhachHangTheoSoDu() {
-        Collections.sort(getDanhSachKhachHang(), (kh1, kh2) -> {
-            double tongSoDu1 = kh1.getDanhSachTaiKhoan().stream().mapToDouble(TaiKhoan::getSoDu).sum();
-            double tongSoDu2 = kh2.getDanhSachTaiKhoan().stream().mapToDouble(TaiKhoan::getSoDu).sum();
-            return Double.compare(tongSoDu2, tongSoDu1);
-        });
+    List<KhachHang> danhSachKhachHang = getDanhSachKhachHang();
+    
+    Collections.sort(danhSachKhachHang, (kh1, kh2) -> {
+        double tongSoDu1 = kh1.getDanhSachTaiKhoan().stream().mapToDouble(TaiKhoan::getSoDu).sum();
+        double tongSoDu2 = kh2.getDanhSachTaiKhoan().stream().mapToDouble(TaiKhoan::getSoDu).sum();
+        return Double.compare(tongSoDu2, tongSoDu1);
+    });
+
+    System.out.println("Danh sách khách hàng sau khi sắp xếp:");
+    for (KhachHang khachHang : danhSachKhachHang) {
+        System.out.println("Mã khách hàng: " + khachHang.getMaKhachHang() + ", Tên: " + khachHang.getHoTen() +
+                ", Tổng số dư: " + khachHang.getDanhSachTaiKhoan().stream().mapToDouble(TaiKhoan::getSoDu).sum());
     }
+}
 
     /**
      * @return the danhSachKhachHang

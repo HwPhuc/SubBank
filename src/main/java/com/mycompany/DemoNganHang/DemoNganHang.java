@@ -84,9 +84,12 @@ public class DemoNganHang {
 
     private static void taoTaiKhoan() {
         System.out.print("Nhập họ tên đầy đủ của bạn: ");
-        String hoTen = scanner.next();
+        scanner.nextLine();
+        String hoTen = scanner.nextLine();
+        
         KhachHang khachHang = new KhachHang(taoMaKhachHang(), hoTen);
         nganHang.themKhachHang(khachHang);
+        
         System.out.println("Tài khoản đã được tạo thành công. Tên đăng nhập của bạn: " + khachHang.getTenDangNhap() +
                 ", Mật khẩu: " + khachHang.getMatKhau());
     }
@@ -148,7 +151,8 @@ public class DemoNganHang {
 
     private static void timKiemKhachHang() {
         System.out.print("Nhập tên để tìm kiếm: ");
-        String ten = scanner.next();
+        scanner.nextLine();
+        String ten = scanner.nextLine();
         List<KhachHang> ketQuaTimKiem = nganHang.timKiemKhachHangTheoTen(ten);
 
         if (ketQuaTimKiem.isEmpty()) {
@@ -179,7 +183,7 @@ public class DemoNganHang {
 
     private static void sapXepDanhSachKhachHangTheoSoDu() {
         nganHang.sapXepKhachHangTheoSoDu();
-        System.out.println("Danh sách khách hàng đã được sắp xếp theo số dư.");
+        System.out.println("Danh sách khách hàng đã được sắp xếp theo số dư giảm dần.");
     }
 
     private static void thayDoiMatKhau() {
