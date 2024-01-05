@@ -19,9 +19,11 @@ public class DemoNganHang {
 
     public static void main(String[] args) {
         while (true) {
-            hienThiMenu();
-            int luaChon = getLuaChonNguoiDung();
-
+            int luaChon;
+            do {
+                hienThiMenu();
+                luaChon = getLuaChonNguoiDung();
+                
             switch (luaChon) {
                 case 1:
                     taoTaiKhoan();
@@ -54,13 +56,17 @@ public class DemoNganHang {
                     dangXuat();
                     break;
                 case 11:
+                    tinhLaiSuatChoTatCaTaiKhoanCoKyHan();
+                    break;
+                case 0:
                     System.out.println("Chương trình kết thúc. Tạm biệt!");
                     System.exit(0);
                 default:
                     System.out.println("Lựa chọn không hợp lệ. Vui lòng thử lại.");
             }
-        }
+        } while (luaChon != 0);
     }
+}
 
     private static void hienThiMenu() {
         System.out.println("===== Menu Ngân Hàng =====");
@@ -74,7 +80,8 @@ public class DemoNganHang {
         System.out.println("8. Sắp Xếp Danh Sách Khách Hàng Theo Số Dư");
         System.out.println("9. Thay Đổi Mật Khẩu");
         System.out.println("10. Đăng Xuất");
-        System.out.println("11. Thoát");
+        System.out.println("11. Tính Lãi Suất Cho Tất Cả Tài Khoàn Có Kỳ Hạn");
+        System.out.println("0. Thoát");
         System.out.print("Nhập lựa chọn của bạn: ");
     }
 
@@ -223,5 +230,14 @@ public class DemoNganHang {
     private static String taoSoTaiKhoan() {
         // Thực hiện logic để tạo số tài khoản duy nhất
         return "TK" + System.currentTimeMillis();
+    }
+    
+    private static void tinhLaiSuatChoTatCaTaiKhoanCoKyHan() {
+        if (khachHangHienTai != null) {
+            double tongLaiSuat = khachHangHienTai.tinhTienLaiChoTatCaTaiKhoan();
+            System.out.println("Tổng lãi suất cho tất cả tài khoản có kỳ hạn của bạn là: " + tongLaiSuat + " VNĐ");
+        } else {
+            System.out.println("Bạn cần đăng nhập để sử dụng tính năng này.");
+        }
     }
 }
