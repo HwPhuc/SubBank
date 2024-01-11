@@ -41,14 +41,6 @@ class NganHang {
         }
         return ketQuaTimKiem;
     }
-
-//    public void sapXepKhachHangTheoSoDu() {
-//        Collections.sort(getDanhSachKhachHang(), (kh1, kh2) -> {
-//            double tongSoDu1 = kh1.getDanhSachTaiKhoan().stream().mapToDouble(TaiKhoan::getSoDu).sum();
-//            double tongSoDu2 = kh2.getDanhSachTaiKhoan().stream().mapToDouble(TaiKhoan::getSoDu).sum();
-//            return Double.compare(tongSoDu2, tongSoDu1);
-//        });
-//    }
     
     public void sapXepKhachHangTheoSoDu() {
     List<KhachHang> danhSachKhachHang = getDanhSachKhachHang();

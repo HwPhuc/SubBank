@@ -69,7 +69,7 @@ public class DemoNganHang {
 }
 
     private static void hienThiMenu() {
-        System.out.println("===== Menu Ngân Hàng =====");
+        System.out.println("\n===== Menu Ngân Hàng =====");
         System.out.println("1. Tạo Tài Khoản");
         System.out.println("2. Đăng Nhập");
         System.out.println("3. Mở Tài Khoản Có Kỳ Hạn");

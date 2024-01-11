@@ -17,14 +17,6 @@ abstract class TaiKhoan {
         this.soDu = soDu;
     }
 
-    public String getSoTaiKhoan() {
-        return soTaiKhoan;
-    }
-
-    public double getSoDu() {
-        return soDu;
-    }
-
     public void napTien(double soTien) {
         this.setSoDu(this.getSoDu() + soTien);
         System.out.println("Nạp tiền thành công. Số dư mới: " + this.getSoDu());
@@ -39,6 +31,14 @@ abstract class TaiKhoan {
         }
     }
 
+    public String getSoTaiKhoan() {
+        return soTaiKhoan;
+    }
+
+    public double getSoDu() {
+        return soDu;
+    }
+    
     /**
      * @param soTaiKhoan the soTaiKhoan to set
      */

@@ -16,15 +16,15 @@ class TaiKhoanCoKyHan extends TaiKhoan {
         this.kyHan = kyHan;
     }
 
-    public int getKyHan() {
-        return kyHan;
-    }
-
     public void addLaiSuat() {
         double laiSuat = getSoDu() * 0.02; // Giả sử lãi suất là 2% hàng tháng
         napTien(laiSuat);
     }
 
+    public int getKyHan() {
+        return kyHan;
+    }
+    
     /**
      * @param kyHan the kyHan to set
      */
