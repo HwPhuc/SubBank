@@ -9,6 +9,7 @@ package com.mycompany.DemoNganHang;
  * @author lehoangphuc
  */
 class TaiKhoanCoKyHan extends TaiKhoan {
+
     private int kyHan;
 
     public TaiKhoanCoKyHan(String soTaiKhoan, double soDu, double laiSuat, int kyHan) {
@@ -24,7 +25,7 @@ class TaiKhoanCoKyHan extends TaiKhoan {
     public int getKyHan() {
         return kyHan;
     }
-    
+
     /**
      * @param kyHan the kyHan to set
      */

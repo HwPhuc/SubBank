@@ -9,6 +9,7 @@ package com.mycompany.DemoNganHang;
  * @author lehoangphuc
  */
 class TaiKhoanKhongKyHan extends TaiKhoan {
+
     public TaiKhoanKhongKyHan(String soTaiKhoan, double soDu) {
         super(soTaiKhoan, soDu);
     }

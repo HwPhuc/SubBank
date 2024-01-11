@@ -1,7 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
 package com.mycompany.DemoNganHang;
 
 import java.util.List;
@@ -23,50 +22,50 @@ public class DemoNganHang {
             do {
                 hienThiMenu();
                 luaChon = getLuaChonNguoiDung();
-                
-            switch (luaChon) {
-                case 1:
-                    taoTaiKhoan();
-                    break;
-                case 2:
-                    dangNhap();
-                    break;
-                case 3:
-                    moTaiKhoanCoKyHan();
-                    break;
-                case 4:
-                    napTien();
-                    break;
-                case 5:
-                    rutTien();
-                    break;
-                case 6:
-                    timKiemKhachHang();
-                    break;
-                case 7:
-                    hienThiDanhSachTaiKhoan();
-                    break;
-                case 8:
-                    sapXepDanhSachKhachHangTheoSoDu();
-                    break;
-                case 9:
-                    thayDoiMatKhau();
-                    break;
-                case 10:
-                    dangXuat();
-                    break;
-                case 11:
-                    tinhLaiSuatChoTatCaTaiKhoanCoKyHan();
-                    break;
-                case 0:
-                    System.out.println("Chương trình kết thúc. Tạm biệt!");
-                    System.exit(0);
-                default:
-                    System.out.println("Lựa chọn không hợp lệ. Vui lòng thử lại.");
-            }
-        } while (luaChon != 0);
+
+                switch (luaChon) {
+                    case 1:
+                        taoTaiKhoan();
+                        break;
+                    case 2:
+                        dangNhap();
+                        break;
+                    case 3:
+                        moTaiKhoanCoKyHan();
+                        break;
+                    case 4:
+                        napTien();
+                        break;
+                    case 5:
+                        rutTien();
+                        break;
+                    case 6:
+                        timKiemKhachHang();
+                        break;
+                    case 7:
+                        hienThiDanhSachTaiKhoan();
+                        break;
+                    case 8:
+                        sapXepDanhSachKhachHangTheoSoDu();
+                        break;
+                    case 9:
+                        thayDoiMatKhau();
+                        break;
+                    case 10:
+                        dangXuat();
+                        break;
+                    case 11:
+                        tinhLaiSuatChoTatCaTaiKhoanCoKyHan();
+                        break;
+                    case 0:
+                        System.out.println("Chương trình kết thúc. Tạm biệt!");
+                        System.exit(0);
+                    default:
+                        System.out.println("Lựa chọn không hợp lệ. Vui lòng thử lại.");
+                }
+            } while (luaChon != 0);
+        }
     }
-}
 
     private static void hienThiMenu() {
         System.out.println("\n===== Menu Ngân Hàng =====");
@@ -93,12 +92,12 @@ public class DemoNganHang {
         System.out.print("Nhập họ tên đầy đủ của bạn: ");
         scanner.nextLine();
         String hoTen = scanner.nextLine();
-        
+
         KhachHang khachHang = new KhachHang(taoMaKhachHang(), hoTen);
         nganHang.themKhachHang(khachHang);
-        
-        System.out.println("Tài khoản đã được tạo thành công. Tên đăng nhập của bạn: " + khachHang.getTenDangNhap() +
-                ", Mật khẩu: " + khachHang.getMatKhau());
+
+        System.out.println("Tài khoản đã được tạo thành công. Tên đăng nhập của bạn: " + khachHang.getTenDangNhap()
+                + ", Mật khẩu: " + khachHang.getMatKhau());
     }
 
     private static void dangNhap() {
@@ -181,8 +180,8 @@ public class DemoNganHang {
             } else {
                 System.out.println("Danh sách tài khoản của khách hàng:");
                 for (TaiKhoan taiKhoan : taiKhoanList) {
-                    System.out.println("Số tài khoản: " + taiKhoan.getSoTaiKhoan() +
-                            ", Số dư: " + taiKhoan.getSoDu());
+                    System.out.println("Số tài khoản: " + taiKhoan.getSoTaiKhoan()
+                            + ", Số dư: " + taiKhoan.getSoDu());
                 }
             }
         }
@@ -231,7 +230,7 @@ public class DemoNganHang {
         // Thực hiện logic để tạo số tài khoản duy nhất
         return "TK" + System.currentTimeMillis();
     }
-    
+
     private static void tinhLaiSuatChoTatCaTaiKhoanCoKyHan() {
         if (khachHangHienTai != null) {
             double tongLaiSuat = khachHangHienTai.tinhTienLaiChoTatCaTaiKhoan();

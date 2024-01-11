@@ -13,6 +13,7 @@ import java.util.Random;
  * @author lehoangphuc
  */
 class KhachHang {
+
     private String maKhachHang;
     private String hoTen;
     private String tenDangNhap;
@@ -79,26 +80,26 @@ class KhachHang {
         // Logic để tạo mật khẩu ngẫu nhiên
         return "Pass" + new Random().nextInt(1000000);
     }
-    
+
     // Trong class KhachHang
-public double tinhTienLaiChoTatCaTaiKhoan() {
-    double tongLai = 0;
+    public double tinhTienLaiChoTatCaTaiKhoan() {
+        double tongLai = 0;
 
-    for (TaiKhoan taiKhoan : danhSachTaiKhoan) {
-        if (taiKhoan instanceof TaiKhoanCoKyHan) {
-            TaiKhoanCoKyHan taiKhoanCoKyHan = (TaiKhoanCoKyHan) taiKhoan;
-            double laiSuat = taiKhoanCoKyHan.getKyHan() == 1 ? 0.025 : 0.055; // Giả sử lãi suất thay đổi theo kỳ hạn
-            tongLai += taiKhoan.getSoDu() * laiSuat;
-        } else {
-            // Xử lý cho tài khoản không kỳ hạn nếu cần
-            // Ví dụ: lãi suất cho tài khoản không kỳ hạn là 0.02
-            double laiSuat = 0.02;
-            tongLai += taiKhoan.getSoDu() * laiSuat;
+        for (TaiKhoan taiKhoan : danhSachTaiKhoan) {
+            if (taiKhoan instanceof TaiKhoanCoKyHan) {
+                TaiKhoanCoKyHan taiKhoanCoKyHan = (TaiKhoanCoKyHan) taiKhoan;
+                double laiSuat = taiKhoanCoKyHan.getKyHan() == 1 ? 0.025 : 0.055; // Giả sử lãi suất thay đổi theo kỳ hạn
+                tongLai += taiKhoan.getSoDu() * laiSuat;
+            } else {
+                // Xử lý cho tài khoản không kỳ hạn nếu cần
+                // Ví dụ: lãi suất cho tài khoản không kỳ hạn là 0.02
+                double laiSuat = 0.02;
+                tongLai += taiKhoan.getSoDu() * laiSuat;
+            }
         }
-    }
 
-    return tongLai;
-}
+        return tongLai;
+    }
 
     /**
      * @param maKhachHang the maKhachHang to set

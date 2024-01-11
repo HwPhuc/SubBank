@@ -9,6 +9,7 @@ package com.mycompany.DemoNganHang;
  * @author lehoangphuc
  */
 abstract class TaiKhoan {
+
     private String soTaiKhoan;
     private double soDu;
 
@@ -38,7 +39,7 @@ abstract class TaiKhoan {
     public double getSoDu() {
         return soDu;
     }
-    
+
     /**
      * @param soTaiKhoan the soTaiKhoan to set
      */
